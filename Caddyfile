@@ -1,0 +1,9 @@
+:80 {
+    gzip
+    tls off
+    root /caddy/html/
+    index index.html index.htm
+    log stdout
+    errors stdout
+}
+

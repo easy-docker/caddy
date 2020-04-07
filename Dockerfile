@@ -15,9 +15,9 @@ VOLUME /caddy
 WORKDIR /caddy
 
 ENV CADDYPATH=/caddy
-ENV ACME_AGREE="false"
 
 EXPOSE 80 443
 
 ENTRYPOINT ["/bin/caddy"]
-CMD ["--conf", "/caddy/Caddyfile", "--agree=$ACME_AGREE"]
+
+CMD ["-conf", "/caddy/Caddyfile"]

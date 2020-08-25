@@ -1,6 +1,7 @@
 :80 {
     encode gzip
     root * /caddy/html/
+    file_server
     log {
         output stderr
         format single_field common_log

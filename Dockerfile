@@ -1,7 +1,7 @@
 FROM alpine
 
 RUN cd /tmp && \
-    wget -O caddy.tar.gz "https://caddyserver.com/download/linux/amd64?plugins=http.proxyprotocol,http.webdav&license=personal&telemetry=off" && \
+    wget -O caddy.tar.gz "https://github.com/caddyserver/caddy/releases/download/v2.1.1/caddy_2.1.1_linux_amd64.tar.gz" && \
     tar zxvf caddy.tar.gz && \
     mv caddy /bin/ && \
     rm -rf /tmp/* && \
@@ -20,4 +20,4 @@ EXPOSE 80 443
 
 ENTRYPOINT ["/bin/caddy"]
 
-CMD ["-conf", "/caddy/Caddyfile"]
+CMD ["run", "--config", "/caddy/Caddyfile"]
